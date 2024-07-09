@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "akshar-bold";
+  src: url(../fonts/Akshar-Bold.ttf) format("TrueType");
+  font-style: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ubuntu";
+  src: url(../fonts/Ubuntu-Regular.ttf) format("TrueType");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "robot-bold";
+  src: url(../fonts/Roboto-Bold.ttf) format("TrueType");
+  font-style: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "roboto-ligth";
+  src: url(../fonts/Roboto-Light.ttf) format("TrueType");
+  font-style: ligth;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "roboto-regular";
+  src: url(../fonts/Roboto-Regular.ttf) format("TrueType");
+  font-style: normal;
+  font-display: swap;
+}
