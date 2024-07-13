@@ -83,6 +83,69 @@ body, html {
   cursor: pointer;
 }
 
+.c-main {
+  width: 100%;
+  background-color: #070718;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
+.c-main .c-main__secTech {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.c-main .c-main__secTech .c-main__title {
+  font-family: "Akshar", sans-serif;
+  font-weight: bold;
+  color: #212121;
+  font-size: 55px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.c-main .c-main__secTech .c-main__title--h2 {
+  color: #ffffff;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 25px;
+  font-weight: normal;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+.c-main .c-main__secTech .c-main__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 1rem;
+}
+.c-main .c-main__secTech .c-main__cards .c-main__cardTech {
+  width: 140px;
+  text-align: center;
+}
+.c-main .c-main__secTech .c-main__cards .c-main__cardTech--icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  border: 2px solid #CD97FF;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+.c-main .c-main__secTech .c-main__cards .c-main__cardTech--icon img {
+  width: 85px;
+  height: 85px;
+}
+.c-main .c-main__secTech .c-main__cards .c-main__cardTech--tech {
+  font-family: "Roboto", sans-serif;
+  font-weight: lighter;
+  font-size: 14px;
+}
+
 @media (min-width: 375px) {
   .c-header {
     justify-content: center;
@@ -132,6 +195,40 @@ body, html {
   .c-header .c-header__buttons i {
     font-size: 40px;
   }
+  .c-main .c-main__secTech .c-main__cards {
+    grid-template-areas: "item1 item2 item3 item4" "item5 item6 item7 item8" "item9 item9 item10 item10";
+  }
+  .c-main .c-main__secTech .item1 {
+    grid-area: item1;
+  }
+  .c-main .c-main__secTech .item2 {
+    grid-area: item2;
+  }
+  .c-main .c-main__secTech .item3 {
+    grid-area: item3;
+  }
+  .c-main .c-main__secTech .item4 {
+    grid-area: item4;
+  }
+  .c-main .c-main__secTech .item5 {
+    grid-area: item5;
+  }
+  .c-main .c-main__secTech .item6 {
+    grid-area: item6;
+  }
+  .c-main .c-main__secTech .item7 {
+    grid-area: item7;
+  }
+  .c-main .c-main__secTech .item8 {
+    grid-area: item8;
+  }
+  .c-main .c-main__secTech .item9 {
+    grid-area: item9;
+    justify-self: end;
+  }
+  .c-main .c-main__secTech .item10 {
+    grid-area: item10;
+  }
 }
 @media (min-width: 1024px) {
   .c-header .c-header__div {
@@ -145,6 +242,30 @@ body, html {
   }
   .c-header .c-header__buttons {
     width: 75%;
+  }
+  .c-main .c-main__secTech .c-main__title {
+    font-size: 90px;
+  }
+  .c-main .c-main__secTech .c-main__title--h2 {
+    font-size: 38px;
+  }
+  .c-main .c-main__secTech .c-main__cards {
+    grid-template-areas: "item1 item2 item3 item4 item5" "item6 item7 item8 item9 item10";
+    gap: 20px;
+  }
+  .c-main .c-main__secTech .c-main__cards .c-main__cardTech {
+    width: 160px;
+  }
+  .c-main .c-main__secTech .c-main__cards .c-main__cardTech--icon {
+    height: 160px;
+  }
+  .c-main .c-main__secTech .c-main__cards .c-main__cardTech--icon img {
+    width: 96px;
+    height: 96px;
+    filter: saturate(30%);
+  }
+  .c-main .c-main__secTech .c-main__cards .c-main__cardTech--tech {
+    font-size: 1rem;
   }
 }
 

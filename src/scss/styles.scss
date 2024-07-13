@@ -94,6 +94,78 @@ body, html{
   }
 }
 
+.c-main{
+  width: 100%;
+  background-color: $main-color;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 30px;
+
+  .c-main__secTech{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .c-main__title{
+      font-family: $akshar;
+      font-weight: bold;
+      color: $font-color;
+      font-size: 55px;
+      text-align: center;
+      width: 100%;
+      position: relative;
+
+
+      &--h2{
+        color: #ffffff;
+        font-family: $ubuntu;
+        font-size: 25px;
+        font-weight: normal;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -60%);
+      }
+    }
+
+    .c-main__cards{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 1rem;
+
+      .c-main__cardTech{
+        width: 140px;
+        text-align: center;
+
+        &--icon{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 140px;
+          border: 2px solid $secondary-color;
+          border-radius: 10px;
+          margin-bottom: .5rem;
+
+          img{
+            width: 85px;
+            height: 85px;
+          }
+        }
+
+        &--tech{
+          font-family: $roboto;
+          font-weight: lighter;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
 @media (min-width: 375px) {
   .c-header{
     justify-content: center;
@@ -155,6 +227,59 @@ body, html{
       }
     }
   }
+
+  .c-main{
+    .c-main__secTech{
+      .c-main__cards{
+        grid-template-areas: 
+          "item1 item2 item3 item4"
+          "item5 item6 item7 item8"
+          "item9 item9 item10 item10"
+        ;
+      }
+
+      .item1{
+        grid-area: item1;
+      }
+
+      .item2{
+        grid-area: item2;
+      }
+
+      .item3{
+        grid-area: item3;
+      }
+
+      .item4{
+        grid-area: item4;
+      }
+
+      .item5{
+        grid-area: item5;
+      }
+
+      .item6{
+        grid-area: item6;
+      }
+
+      .item7{
+        grid-area: item7;
+      }
+
+      .item8{
+        grid-area: item8;
+      }
+
+      .item9{
+        grid-area: item9;
+        justify-self: end;
+      }
+
+      .item10{
+        grid-area: item10;
+      }
+    }
+  }
 }
 
 @media (min-width: 1024px) {
@@ -172,6 +297,44 @@ body, html{
 
     .c-header__buttons{
       width: 75%;
+    }
+  }
+
+  .c-main{
+    .c-main__secTech{
+      .c-main__title{
+        font-size: 90px;
+
+        &--h2{
+          font-size: 38px;
+        }
+      }
+
+      .c-main__cards{
+        grid-template-areas: 
+        "item1 item2 item3 item4 item5"
+        "item6 item7 item8 item9 item10"
+        ;
+        gap: 20px;
+
+        .c-main__cardTech{
+          width: 160px;
+
+          &--icon{
+            height: 160px;
+
+            img{
+              width: 96px;
+              height: 96px;
+              filter: saturate(30%);
+            }
+          }
+
+          &--tech{
+            font-size: 1rem;
+          }
+        }
+      }
     }
   }
 }
