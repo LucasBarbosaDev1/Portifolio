@@ -1,0 +1,177 @@
+@import "./variables.scss";
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body, html{
+  width: 100%;
+  height: 100%;
+}
+
+.c-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: $main-color;
+  background-image: url("../images/studio-background-concept-abstract-empty-light-gradient-purple-studio-room-background-product.jpg");
+  background-size: cover;
+  background-position: center center;
+
+  .c-header__nav{
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    background-color: #00000033;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    .c-header__link{
+      text-decoration: none;
+      color: #ffffff;
+      font-family: $roboto;
+      font-weight: normal;
+      font-size: .9rem;
+    }
+  }
+
+  .c-header__div{
+    color: #ffffff;
+    padding-left: .5rem;
+
+    .c-header__title{
+      font-family: $ubuntu;
+      font-weight: normal;
+      font-size: 26px;
+
+      &--emphasis{
+        color: $secondary-color;
+      }
+    }
+
+    .c-header__description{
+      font-family: $roboto;
+      font-weight: lighter;
+      font-size: 1rem;
+      margin-top: 1rem;
+      max-width: 360px;
+    }
+
+  }
+
+  .c-header__buttons{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 1.5rem;
+    color: #ffffff;
+    gap: 1rem;
+    padding-left: .5rem;
+
+    button{
+      height: 40px;
+      width: 160px;
+      border: 2px solid $secondary-color;
+      background-color: transparent;
+      font-size: 1rem;
+      color: $secondary-color;
+      font-family: $roboto;
+      font-weight: normal;
+      cursor: pointer;
+    }
+
+    i{
+      color: $secondary-color;
+      font-size: 30px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: 375px) {
+  .c-header{
+    justify-content: center;
+    align-items: center;
+    .c-header__div{
+      width: 95%;
+      .c-header__title{
+        font-size: 30px;
+      }
+
+      .c-header__description{
+        font-size: 1.2rem;
+      }
+    }
+
+    .c-header__buttons{
+      width: 95%;
+    }
+
+  }
+}
+
+@media (min-width: 768px) {
+  .c-header{
+    .c-header__nav{
+      justify-content: end;
+      gap: 2.5rem;
+      padding-right: 4rem;
+
+      .c-header__link{
+        font-size: 1rem;
+      }
+    }
+
+    .c-header__div{
+      width: 85%;
+      .c-header__title{
+        font-size: 50px;
+      }
+
+      .c-header__description{
+        font-size: 1.3rem;
+        max-width: 600px;
+      }
+
+    }
+
+    .c-header__buttons{
+      width: 85%;
+      margin-top: 2.5rem;
+      button{
+        width: 185px;
+        height: 50px;
+        font-size: 20px;
+      }
+
+      i{
+        font-size: 40px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .c-header{
+    .c-header__div{
+      width: 75%;
+      .c-header__title{
+        font-size: 64px;
+      }
+
+      .c-header__description{
+        font-size: 25px;
+      }
+    }
+
+    .c-header__buttons{
+      width: 75%;
+    }
+  }
+}
