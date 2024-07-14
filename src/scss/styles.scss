@@ -6,6 +6,27 @@
   box-sizing: border-box;
 }
 
+@mixin title-config($font-size1, $font-sixe2) {
+  font-family: $akshar;
+  font-weight: bold;
+  color: $font-color;
+  font-size: $font-size1;
+  text-align: center;
+  width: 100%;
+  position: relative;
+
+  &--h2{
+    color: #ffffff;
+    font-family: $ubuntu;
+    font-size: $font-sixe2;
+    font-weight: normal;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+  }
+}
+
 body, html{
   width: 100%;
   height: 100%;
@@ -111,25 +132,7 @@ body, html{
     justify-content: center;
 
     .c-main__title{
-      font-family: $akshar;
-      font-weight: bold;
-      color: $font-color;
-      font-size: 55px;
-      text-align: center;
-      width: 100%;
-      position: relative;
-
-
-      &--h2{
-        color: #ffffff;
-        font-family: $ubuntu;
-        font-size: 25px;
-        font-weight: normal;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -60%);
-      }
+      @include title-config(55px, 25px);
     }
 
     .c-main__cards{
@@ -160,6 +163,83 @@ body, html{
           font-family: $roboto;
           font-weight: lighter;
           font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .c-main__projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    padding: 10px;
+
+    .c-main__title{
+      @include title-config(55px, 25px);
+    }
+
+    .c-main__menu{
+      display: flex;
+      gap: 1.2rem;
+      background-color: $font-color;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+
+      input{
+        background-color: transparent;
+        border: none;
+        font-family: $roboto;
+        color: #ffffff;
+        font-size: 1rem;
+        font-weight: normal;
+      }
+    }
+
+    .c-main__listProject{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem 1rem;
+
+      .c-main__cardProject{
+        line-height: 1.5rem;
+
+        .c-main__preview{
+          border: 2px solid $secondary-color;
+          border-radius: 10px;
+          padding: 1rem;
+          margin-bottom: .7rem;
+
+          img{
+            width: 100%;
+            max-width: 310px;
+          }
+
+        }
+
+        .c-main__category{
+          font-family: $roboto;
+          font-size: 13px;
+          color: #6b6b6b;
+        }
+
+        .c-main__titleProject{
+          font-family: $roboto;
+          font-weight: normal;
+          font-size: 1rem;
+        }
+
+        .c-main__links{
+          display: flex;
+          gap: 1.5rem;
+          margin-top: .7rem;
+
+          a{
+            color: $secondary-color;
+            font-size: 1.5rem;
+          }
         }
       }
     }
@@ -279,6 +359,13 @@ body, html{
         grid-area: item10;
       }
     }
+
+    .c-main__projects{
+      padding: 0 4rem;
+      .c-main__listProject{
+        grid-template-columns: 1fr 1fr;
+      }
+    }
   }
 }
 
@@ -303,11 +390,7 @@ body, html{
   .c-main{
     .c-main__secTech{
       .c-main__title{
-        font-size: 90px;
-
-        &--h2{
-          font-size: 38px;
-        }
+        @include title-config(90px, 38px)
       }
 
       .c-main__cards{
@@ -336,5 +419,29 @@ body, html{
         }
       }
     }
+
+    .c-main__projects{
+      .c-main__title{
+        @include title-config(90px, 38px)
+      }
+
+      .c-main__menu{
+        input{
+          font-size: 1.1rem;
+        }
+      }
+    }
   }
+
+}
+
+@media (min-width: 1440px) {
+  .c-main{
+    .c-main__projects{
+      .c-main__listProject{
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  }
+
 }

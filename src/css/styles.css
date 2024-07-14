@@ -145,6 +145,86 @@ body, html {
   font-weight: lighter;
   font-size: 14px;
 }
+.c-main .c-main__projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  padding: 10px;
+}
+.c-main .c-main__projects .c-main__title {
+  font-family: "Akshar", sans-serif;
+  font-weight: bold;
+  color: #212121;
+  font-size: 55px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.c-main .c-main__projects .c-main__title--h2 {
+  color: #ffffff;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 25px;
+  font-weight: normal;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+.c-main .c-main__projects .c-main__menu {
+  display: flex;
+  gap: 1.2rem;
+  background-color: #212121;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.c-main .c-main__projects .c-main__menu input {
+  background-color: transparent;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: normal;
+}
+.c-main .c-main__projects .c-main__listProject {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem 1rem;
+}
+.c-main .c-main__projects .c-main__listProject .c-main__cardProject {
+  line-height: 1.5rem;
+}
+.c-main .c-main__projects .c-main__listProject .c-main__cardProject .c-main__preview {
+  border: 2px solid #CD97FF;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 0.7rem;
+}
+.c-main .c-main__projects .c-main__listProject .c-main__cardProject .c-main__preview img {
+  width: 100%;
+  max-width: 310px;
+}
+.c-main .c-main__projects .c-main__listProject .c-main__cardProject .c-main__category {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  color: #6b6b6b;
+}
+.c-main .c-main__projects .c-main__listProject .c-main__cardProject .c-main__titleProject {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 1rem;
+}
+.c-main .c-main__projects .c-main__listProject .c-main__cardProject .c-main__links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.7rem;
+}
+.c-main .c-main__projects .c-main__listProject .c-main__cardProject .c-main__links a {
+  color: #CD97FF;
+  font-size: 1.5rem;
+}
 
 @media (min-width: 375px) {
   .c-header {
@@ -229,6 +309,12 @@ body, html {
   .c-main .c-main__secTech .item10 {
     grid-area: item10;
   }
+  .c-main .c-main__projects {
+    padding: 0 4rem;
+  }
+  .c-main .c-main__projects .c-main__listProject {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media (min-width: 1024px) {
   .c-header .c-header__div {
@@ -244,10 +330,23 @@ body, html {
     width: 75%;
   }
   .c-main .c-main__secTech .c-main__title {
+    font-family: "Akshar", sans-serif;
+    font-weight: bold;
+    color: #212121;
     font-size: 90px;
+    text-align: center;
+    width: 100%;
+    position: relative;
   }
   .c-main .c-main__secTech .c-main__title--h2 {
+    color: #ffffff;
+    font-family: "Ubuntu", sans-serif;
     font-size: 38px;
+    font-weight: normal;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
   }
   .c-main .c-main__secTech .c-main__cards {
     grid-template-areas: "item1 item2 item3 item4 item5" "item6 item7 item8 item9 item10";
@@ -266,6 +365,33 @@ body, html {
   }
   .c-main .c-main__secTech .c-main__cards .c-main__cardTech--tech {
     font-size: 1rem;
+  }
+  .c-main .c-main__projects .c-main__title {
+    font-family: "Akshar", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 90px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+  }
+  .c-main .c-main__projects .c-main__title--h2 {
+    color: #ffffff;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 38px;
+    font-weight: normal;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+  }
+  .c-main .c-main__projects .c-main__menu input {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1440px) {
+  .c-main .c-main__projects .c-main__listProject {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
