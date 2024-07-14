@@ -30,6 +30,7 @@
 body, html{
   width: 100%;
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 .c-header{
@@ -38,20 +39,23 @@ body, html{
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-color: $main-color;
-  background-image: url("../images/studio-background-concept-abstract-empty-light-gradient-purple-studio-room-background-product.jpg");
   background-size: cover;
   background-position: center center;
+  background: rgb(66,1,95);
+  background: linear-gradient(180deg, rgba(66,1,95,1) 0%, rgba(7,7,24,1) 96%);
 
   .c-header__nav{
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 60px;
     background-color: #00000033;
+    backdrop-filter: blur(10px);
     top: 0;
+    z-index: 999;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    border-bottom: 1px solid $secondary-color;
     
     .c-header__link{
       text-decoration: none;
@@ -122,7 +126,6 @@ body, html{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 60px;
   padding-bottom: 30px;
 
   .c-main__secTech{
@@ -132,6 +135,7 @@ body, html{
     justify-content: center;
 
     .c-main__title{
+      margin-top: 60px;
       @include title-config(55px, 25px);
     }
 
@@ -173,10 +177,10 @@ body, html{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 60px;
     padding: 10px;
 
     .c-main__title{
+      margin-top: 60px;
       @include title-config(55px, 25px);
     }
 
@@ -250,6 +254,7 @@ body, html{
   .c-header{
     justify-content: center;
     align-items: center;
+
     .c-header__div{
       width: 95%;
       .c-header__title{
@@ -272,11 +277,29 @@ body, html{
   .c-header{
     .c-header__nav{
       justify-content: end;
-      gap: 2.5rem;
+      gap: .5rem;
       padding-right: 4rem;
 
       .c-header__link{
         font-size: 1rem;
+        position: relative;
+        padding: 0 40px 5px 1px;
+
+        &::after{
+          content: " ";
+          width: 0%;
+          height: 2px;
+          background-color: $secondary-color;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transition: 0.5s ease-in-out;
+
+        }
+
+        &:hover::after{
+          width: 100%;
+        }
       }
     }
 
