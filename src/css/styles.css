@@ -85,7 +85,10 @@ body, html {
   gap: 1rem;
   padding-left: 0.5rem;
 }
-.c-header .c-header__buttons button {
+.c-header .c-header__buttons .c-header__download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 40px;
   width: 160px;
   border: 2px solid #CD97FF;
@@ -95,6 +98,7 @@ body, html {
   font-family: "Roboto", sans-serif;
   font-weight: normal;
   cursor: pointer;
+  text-decoration: none;
 }
 .c-header .c-header__buttons i {
   color: #CD97FF;
@@ -302,13 +306,13 @@ body, html {
     width: 85%;
     margin-top: 2.5rem;
   }
-  .c-header .c-header__buttons button {
+  .c-header .c-header__buttons .c-header__download {
     width: 185px;
     height: 50px;
     font-size: 20px;
     transition: 0.5s ease-in-out;
   }
-  .c-header .c-header__buttons button:hover {
+  .c-header .c-header__buttons .c-header__download:hover {
     scale: 1.1;
     color: #ffffff;
     border-color: #ffffff;

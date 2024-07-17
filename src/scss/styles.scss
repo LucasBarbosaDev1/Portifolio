@@ -112,7 +112,10 @@ body, html{
     gap: 1rem;
     padding-left: .5rem;
 
-    button{
+    .c-header__download{
+      display: flex;
+      align-items: center;
+      justify-content: center;
       height: 40px;
       width: 160px;
       border: 2px solid $secondary-color;
@@ -122,6 +125,7 @@ body, html{
       font-family: $roboto;
       font-weight: normal;
       cursor: pointer;
+      text-decoration: none;
     }
 
     i{
@@ -333,7 +337,8 @@ body, html{
     .c-header__buttons{
       width: 85%;
       margin-top: 2.5rem;
-      button{
+
+      .c-header__download{
         width: 185px;
         height: 50px;
         font-size: 20px;
