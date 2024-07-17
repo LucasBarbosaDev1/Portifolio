@@ -5,6 +5,14 @@
   box-sizing: border-box;
 }
 
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 body, html {
   width: 100%;
   height: 100%;
@@ -50,9 +58,16 @@ body, html {
   font-family: "Ubuntu", sans-serif;
   font-weight: normal;
   font-size: 26px;
+  display: block;
 }
-.c-header .c-header__div .c-header__title--emphasis {
+.c-header .c-header__div .c-header__title .c-header__title--emphasis {
   color: #CD97FF;
+}
+.c-header .c-header__div .c-header__title .c-header__title--emphasis::after {
+  color: #ffffff;
+  font-weight: lighter;
+  content: "|";
+  animation: blink 0.7s infinite;
 }
 .c-header .c-header__div .c-header__description {
   font-family: "Roboto", sans-serif;

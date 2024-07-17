@@ -27,6 +27,11 @@
   }
 }
 
+@keyframes blink{
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
 body, html{
   width: 100%;
   height: 100%;
@@ -74,9 +79,17 @@ body, html{
       font-family: $ubuntu;
       font-weight: normal;
       font-size: 26px;
+      display: block;
 
-      &--emphasis{
+      .c-header__title--emphasis{
         color: $secondary-color;
+
+        &::after{
+          color: #ffffff;
+          font-weight: lighter;
+          content: '|';
+          animation: blink .7s infinite;
+        }
       }
     }
 
