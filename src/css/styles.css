@@ -130,6 +130,7 @@ body, html {
 .c-main .c-main__secTech .c-main__cards .c-main__cardTech {
   width: 140px;
   text-align: center;
+  cursor: pointer;
 }
 .c-main .c-main__secTech .c-main__cards .c-main__cardTech--icon {
   display: flex;
@@ -290,9 +291,20 @@ body, html {
     width: 185px;
     height: 50px;
     font-size: 20px;
+    transition: 0.5s ease-in-out;
   }
-  .c-header .c-header__buttons i {
+  .c-header .c-header__buttons button:hover {
+    scale: 1.1;
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+  .c-header .c-header__buttons a i {
     font-size: 40px;
+    transition: 0.5s ease-in-out;
+  }
+  .c-header .c-header__buttons a i:hover {
+    scale: 1.4;
+    color: #ffffff;
   }
   .c-main .c-main__secTech .c-main__cards {
     grid-template-areas: "item1 item2 item3 item4" "item5 item6 item7 item8" "item9 item9 item10 item10";
@@ -331,8 +343,18 @@ body, html {
   .c-main .c-main__projects {
     padding: 0 4rem;
   }
+  .c-main .c-main__projects .c-main__menu input {
+    cursor: pointer;
+  }
   .c-main .c-main__projects .c-main__listProject {
     grid-template-columns: 1fr 1fr;
+  }
+  .c-main .c-main__projects .c-main__listProject .c-main__cardProject .c-main__links a {
+    transition: 0.5s ease-in-out;
+  }
+  .c-main .c-main__projects .c-main__listProject .c-main__cardProject .c-main__links a:hover {
+    scale: 1.4;
+    color: #ffffff;
   }
 }
 @media (min-width: 1024px) {
@@ -373,6 +395,15 @@ body, html {
   }
   .c-main .c-main__secTech .c-main__cards .c-main__cardTech {
     width: 160px;
+    transition: 0.5s ease-in-out;
+  }
+  .c-main .c-main__secTech .c-main__cards .c-main__cardTech:hover {
+    font-weight: bold;
+    color: #CD97FF;
+    scale: 1.1;
+  }
+  .c-main .c-main__secTech .c-main__cards .c-main__cardTech:hover .c-main__cardTech--icon img {
+    filter: saturate(100%);
   }
   .c-main .c-main__secTech .c-main__cards .c-main__cardTech--icon {
     height: 160px;
@@ -380,7 +411,8 @@ body, html {
   .c-main .c-main__secTech .c-main__cards .c-main__cardTech--icon img {
     width: 96px;
     height: 96px;
-    filter: saturate(30%);
+    filter: saturate(20%);
+    transition: 0.5s ease-in-out;
   }
   .c-main .c-main__secTech .c-main__cards .c-main__cardTech--tech {
     font-size: 1rem;

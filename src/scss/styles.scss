@@ -147,6 +147,7 @@ body, html{
       .c-main__cardTech{
         width: 140px;
         text-align: center;
+        cursor: pointer;
 
         &--icon{
           display: flex;
@@ -323,10 +324,24 @@ body, html{
         width: 185px;
         height: 50px;
         font-size: 20px;
+        transition: .5s ease-in-out;
+
+        &:hover{
+          scale: 1.1;
+          color: #ffffff;
+          border-color: #ffffff;
+        }
+
       }
 
-      i{
+      a i{
         font-size: 40px;
+        transition: .5s ease-in-out;
+
+        &:hover{
+          scale: 1.4;
+          color: #ffffff;
+        }
       }
     }
   }
@@ -385,8 +400,28 @@ body, html{
 
     .c-main__projects{
       padding: 0 4rem;
+
+      .c-main__menu{
+        input{
+          cursor: pointer;
+        }
+      }
+
       .c-main__listProject{
         grid-template-columns: 1fr 1fr;
+
+        .c-main__cardProject{
+          .c-main__links{
+            a{
+              transition: .5s ease-in-out;
+
+              &:hover{
+                scale: 1.4;
+                color: #ffffff;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -425,14 +460,26 @@ body, html{
 
         .c-main__cardTech{
           width: 160px;
+          transition: .5s ease-in-out;
+          
+          &:hover{
+            font-weight: bold;
+            color: $secondary-color;
+            scale: 1.1;
+          }
+
+          &:hover .c-main__cardTech--icon img{
+            filter: saturate(100%);
+          }
 
           &--icon{
             height: 160px;
-
+            
             img{
               width: 96px;
               height: 96px;
-              filter: saturate(30%);
+              filter: saturate(20%);
+              transition: .5s ease-in-out;
             }
           }
 
