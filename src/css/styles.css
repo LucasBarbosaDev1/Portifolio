@@ -19,6 +19,20 @@ body, html {
   scroll-behavior: smooth;
 }
 
+.active {
+  color: #CD97FF !important;
+  font-weight: bold !important;
+}
+.active::after {
+  content: " ";
+  width: 100%;
+  height: 2px;
+  background-color: #CD97FF;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 .c-header {
   display: flex;
   flex-direction: column;
@@ -150,6 +164,7 @@ body, html {
   width: 140px;
   text-align: center;
   cursor: pointer;
+  position: relative;
 }
 .c-main .c-main__secTech .c-main__cards .c-main__cardTech--icon {
   display: flex;
@@ -198,19 +213,20 @@ body, html {
 }
 .c-main .c-main__projects .c-main__menu {
   display: flex;
-  gap: 1.2rem;
+  gap: 1rem;
   background-color: #212121;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 1rem;
 }
-.c-main .c-main__projects .c-main__menu input {
-  background-color: transparent;
-  border: none;
+.c-main .c-main__projects .c-main__menu span {
   font-family: "Roboto", sans-serif;
   color: #ffffff;
   font-size: 1rem;
   font-weight: normal;
+  cursor: pointer;
+  position: relative;
+  padding: 0 5px 2px;
 }
 .c-main .c-main__projects .c-main__listProject {
   display: grid;
