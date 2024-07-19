@@ -68,7 +68,7 @@ setInterval(() => {
 // projetos
 const projects = [
   {
-    img: "src/assets/mac2.png",
+    img: "src/assets/mac2.webp",
     altText: "",
     type: "FREELANCE",
     title: "CARDÁPIO ONLINE",
@@ -76,14 +76,14 @@ const projects = [
     linkGithub: "https://cardapio-wpp.netlify.app/"
   },
   {
-    img: "src/assets/mac.png",
+    img: "src/assets/mac.webp",
     altText: "",
     type: "PESSOAL",
     title: "PORTIFÓLIO",
     linkSite: "https://lucas-barbosa.netlify.app/#",
     linkGithub: "https://lucas-barbosa.netlify.app/#"
   },{
-    img: "src/assets/mac2.png",
+    img: "src/assets/mac2.webp",
     altText: "",
     type: "PESSOAL",
     title: "PORTIFÓLIO",

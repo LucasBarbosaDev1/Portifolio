@@ -1,9 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@font-face{
+  font-family: "Akshar";
+  src: url(../fonts/Akshar-Bold.ttf) format(truetype);
+}
+
+@font-face {
+  font-family: "Roboto-Normal";
+  src: url(../fonts/Roboto-Regular.ttf) format(truetype);
+}
+
+@font-face {
+  font-family: "Roboto-Lighter";
+  src: url(../fonts/Roboto-Light.ttf) format(truetype);
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url(../fonts/Ubuntu-Regular.ttf) format(truetype);
+}
 
 $main-color: #070718;
 $secondary-color: #CD97FF;
 $font-color: #212121;
 
 $akshar: "Akshar", sans-serif;
-$roboto: "Roboto", sans-serif;
+$roboto-normal: "Roboto-Normal", sans-serif;
+$roboto-lighter: "Roboto-Lighter", sans-serif;
 $ubuntu: "Ubuntu", sans-serif;

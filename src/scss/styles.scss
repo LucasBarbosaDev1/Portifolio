@@ -79,8 +79,7 @@ body, html{
     .c-header__link{
       text-decoration: none;
       color: #ffffff;
-      font-family: $roboto;
-      font-weight: normal;
+      font-family: $roboto-normal;
       font-size: .9rem;
       position: relative;      
     }
@@ -109,8 +108,7 @@ body, html{
     }
 
     .c-header__description{
-      font-family: $roboto;
-      font-weight: lighter;
+      font-family: $roboto-lighter;
       font-size: 1rem;
       margin-top: 1rem;
       max-width: 360px;
@@ -137,8 +135,7 @@ body, html{
       background-color: transparent;
       font-size: 1rem;
       color: $secondary-color;
-      font-family: $roboto;
-      font-weight: normal;
+      font-family: $roboto-normal;
       cursor: pointer;
       text-decoration: none;
     }
@@ -198,8 +195,7 @@ body, html{
         }
 
         &--tech{
-          font-family: $roboto;
-          font-weight: lighter;
+          font-family: $roboto-lighter;
           font-size: 14px;
 
         }
@@ -228,10 +224,9 @@ body, html{
       margin-bottom: 1rem;
 
       span{
-        font-family: $roboto;
+        font-family: $roboto-normal;
         color: #ffffff;
         font-size: 1rem;
-        font-weight: normal;
         cursor: pointer;
         position: relative;
         padding: 0 5px 2px;
@@ -260,13 +255,13 @@ body, html{
         }
 
         .c-main__category{
-          font-family: $roboto;
+          font-family: $roboto-normal;
           font-size: 13px;
           color: #6b6b6b;
         }
 
         .c-main__titleProject{
-          font-family: $roboto;
+          font-family: $roboto-normal;
           font-weight: normal;
           font-size: 1rem;
         }
