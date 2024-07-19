@@ -1,4 +1,48 @@
-// animação do texto
+// sessão nav ativa
+const nav = document.querySelector('.c-header__nav');
+const homeNav = document.querySelector('.homeNav');
+const techNav = document.querySelector('.techNav');
+const projectsNav = document.querySelector('.projectsNav');
+
+const header = document.querySelector('.c-header');
+const secTech = document.querySelector('.c-main__secTech');
+const main__projects = document.querySelector('.c-main__projects')
+
+window.addEventListener('scroll', () => {
+  const navTop = nav.getBoundingClientRect().top;
+
+  const headerTop = header.getBoundingClientRect().top;
+  const headerBottom = headerTop + header.offsetHeight;
+
+  const techTop = secTech.getBoundingClientRect().top;
+  const techBottom = techTop + secTech.offsetHeight;
+
+  const projectsTop = main__projects.getBoundingClientRect().top;
+  const projectsBottom = projectsTop + main__projects.offsetHeight;
+  const pageHeight = document.documentElement.scrollHeight;
+  const scrollTop = window.scrollY;
+
+  if (navTop >= headerTop && navTop < headerBottom) {
+    homeNav.classList.add('active');
+    techNav.classList.remove('active');
+    projectsNav.classList.remove('active');
+  };
+
+  if (navTop >= techTop && navTop < techBottom) {
+    homeNav.classList.remove('active');
+    techNav.classList.add('active');
+    projectsNav.classList.remove('active');
+  };
+
+  if (navTop >= projectsTop && navTop < projectsBottom || scrollTop + window.innerHeight >= pageHeight) {
+    homeNav.classList.remove('active');
+    techNav.classList.remove('active');
+    projectsNav.classList.add('active');
+  };
+});
+
+
+// efeito typing
 const myName = document.querySelector('.c-header__title--emphasis');
 const text = "Lucas Barbosa"
 let index = 0;
@@ -8,8 +52,8 @@ function typeWrite() {
     myName.textContent += text[index];
     index++;
     setTimeout(typeWrite, 75)
-  }
-}
+  };
+};
 
 typeWrite();
 
@@ -18,7 +62,7 @@ setInterval(() => {
     myName.textContent = "";
     index = 0;
     typeWrite();
-  }
+  };
 }, 3000)
 
 // projetos
@@ -91,7 +135,7 @@ btnFrelance.addEventListener('click', () => {
   freelancesArr.forEach((item) => {
     listProjects.innerHTML += `          <div class="c-main__cardProject">
               <div class="c-main__preview">
-                <img src="${item.img}" alt="">
+                <img src="${item.img}" alt="${item.altText}">
               </div>
   
               <span class="c-main__category">${item.type}</span>
@@ -119,7 +163,7 @@ btnPessoal.addEventListener('click', () => {
   pessoalArr.forEach((item) => {
     listProjects.innerHTML += `          <div class="c-main__cardProject">
               <div class="c-main__preview">
-                <img src="${item.img}" alt="">
+                <img src="${item.img}" alt="${item.altText}">
               </div>
   
               <span class="c-main__category">${item.type}</span>
