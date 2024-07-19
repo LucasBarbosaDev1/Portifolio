@@ -1,18 +1,25 @@
 // animação do texto
 const myName = document.querySelector('.c-header__title--emphasis');
+const text = "Lucas Barbosa"
+let index = 0;
 
-function typing(el) {
-  const textArray = el.innerHTML.split('');
-  el.innerHTML = "";
-
-  textArray.forEach((letter, i) => {
-    setTimeout(() => el.innerHTML += letter ,110 * i)
-  });
-
-  setInterval(() => typing(el), 3000)
+function typeWrite() {
+  if (index < text.length) {
+    myName.textContent += text[index];
+    index++;
+    setTimeout(typeWrite, 75)
+  }
 }
 
-typing(myName);
+typeWrite();
+
+setInterval(() => {
+  if (index === text.length) {
+    myName.textContent = "";
+    index = 0;
+    typeWrite();
+  }
+}, 3000)
 
 // projetos
 const projects = [
