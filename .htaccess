@@ -1,0 +1,10 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www.lucas-barbosa.netlify.app [NC]
+ReweiteRule ^(.*)$ http://lucas-barbosa.netlify.app/$1 [L,R=301]
+
+RewriteCond %{HTTP_HOST} !^\. [NC]
+ReweiteRule ^(.+[^/])/$ http://%{HTTP_HOST}/$1 [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^.*/index.html
+ReweiteRule ^(.*)$ / [R=301,L]

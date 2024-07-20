@@ -73,7 +73,9 @@ const projects = [
     type: "FREELANCE",
     title: "CARDÁPIO ONLINE",
     linkSite: "https://cardapio-wpp.netlify.app/",
-    linkGithub: "https://cardapio-wpp.netlify.app/"
+    linkGithub: "https://cardapio-wpp.netlify.app/",
+    arialLabelSite: "",
+    arialLabelGithub: ""
   },
   {
     img: "src/assets/mac.webp",
@@ -81,14 +83,18 @@ const projects = [
     type: "PESSOAL",
     title: "PORTIFÓLIO",
     linkSite: "https://lucas-barbosa.netlify.app/#",
-    linkGithub: "https://lucas-barbosa.netlify.app/#"
+    linkGithub: "https://lucas-barbosa.netlify.app/#",
+    arialLabelSite: "",
+    arialLabelGithub: ""
   },{
     img: "src/assets/mac2.webp",
     altText: "",
     type: "PESSOAL",
     title: "PORTIFÓLIO",
     linkSite: "https://lucas-barbosa.netlify.app/#",
-    linkGithub: "https://lucas-barbosa.netlify.app/#"
+    linkGithub: "https://lucas-barbosa.netlify.app/#",
+    arialLabelSite: "",
+    arialLabelGithub: ""
   }
 ];
 
@@ -113,8 +119,8 @@ btnAll.addEventListener('click', () => {
               <h3 class="c-main__titleProject">${item.title}</h3>
   
               <div class="c-main__links">
-                <a href="${item.linkSite}" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                <a href="${item.linkGithub}"><i class="fa-solid fa-code"></i></a>
+                <a href="${item.linkSite}" target="_blank" aria-label="${item.arialLabelSite}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="${item.linkGithub}" target="_blank" aria-label="${item.arialLabelGithub}"><i class="fa-solid fa-code"></i></a>
               </div>
             </div>
   `;
@@ -142,8 +148,8 @@ btnFrelance.addEventListener('click', () => {
               <h3 class="c-main__titleProject">${item.title}</h3>
   
               <div class="c-main__links">
-                <a href="${item.linkSite}" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                <a href="${item.linkGithub}"><i class="fa-solid fa-code"></i></a>
+                <a href="${item.linkSite}" target="_blank" aria-label="${item.arialLabelSite}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="${item.linkGithub}" target="_blank" aria-label="${item.arialLabelGithub}"><i class="fa-solid fa-code"></i></a>
               </div>
             </div>
   `;
@@ -170,8 +176,8 @@ btnPessoal.addEventListener('click', () => {
               <h3 class="c-main__titleProject">${item.title}</h3>
   
               <div class="c-main__links">
-                <a href="${item.linkSite}" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                <a href="${item.linkGithub}"><i class="fa-solid fa-code"></i></a>
+                <a href="${item.linkSite}" target="_blank" aria-label="${item.arialLabelSite}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="${item.linkGithub}" target="_blank" aria-label="${item.arialLabelGithub}"><i class="fa-solid fa-code"></i></a>
               </div>
             </div>
   `;
