@@ -68,33 +68,20 @@ setInterval(() => {
 // projetos
 const projects = [
   {
-    img: "src/assets/mac2.webp",
+    img: "src/assets/relatorio-mar/preview-mar.webp",
     altText: "",
     type: "FREELANCE",
-    title: "CARDÁPIO ONLINE",
-    linkSite: "https://cardapio-wpp.netlify.app/",
-    linkGithub: "https://cardapio-wpp.netlify.app/",
-    arialLabelSite: "",
-    arialLabelGithub: ""
-  },
-  {
-    img: "src/assets/mac.webp",
-    altText: "",
-    type: "PESSOAL",
-    title: "PORTIFÓLIO",
-    linkSite: "https://lucas-barbosa.netlify.app/#",
-    linkGithub: "https://lucas-barbosa.netlify.app/#",
-    arialLabelSite: "",
-    arialLabelGithub: ""
-  },{
-    img: "src/assets/mac2.webp",
-    altText: "",
-    type: "PESSOAL",
-    title: "PORTIFÓLIO",
-    linkSite: "https://lucas-barbosa.netlify.app/#",
-    linkGithub: "https://lucas-barbosa.netlify.app/#",
-    arialLabelSite: "",
-    arialLabelGithub: ""
+    technologies: [
+      '<img width="30" height="30" src="https://img.icons8.com/color/60/html-5--v1.png" alt="html-5--v1"/>',
+      '<img width="30" height="30" src="https://img.icons8.com/color/60/css3.png" alt="css3"/>',
+      '<img width="30" height="30" src="https://img.icons8.com/color/60/sass.png" alt="sass"/>',
+      '<img width="30" height="30" src="https://img.icons8.com/color/60/typescript.png" alt="typescript"/>'
+    ],
+    title: "GERADOR DE RELATÓRIO VIA WHATSAPP",
+    linkSite: "https://relatorio-mar-reciclagem.netlify.app/",
+    linkGithub: "https://github.com/LucasBarbosaDev1/gerador-de-relatorio-MAR",
+    arialLabelSite: "link-do-site",
+    arialLabelGithub: "link-do-repositório"
   }
 ];
 
@@ -116,10 +103,14 @@ btnAll.addEventListener('click', () => {
               </div>
   
               <span class="c-main__category">${item.type}</span>
+
+              <div>${item.technologies.join('')}</div>
+
               <h3 class="c-main__titleProject">${item.title}</h3>
   
               <div class="c-main__links">
                 <a href="${item.linkSite}" target="_blank" aria-label="${item.arialLabelSite}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                
                 <a href="${item.linkGithub}" target="_blank" aria-label="${item.arialLabelGithub}"><i class="fa-solid fa-code"></i></a>
               </div>
             </div>
@@ -141,14 +132,18 @@ btnFrelance.addEventListener('click', () => {
   freelancesArr.forEach((item) => {
     listProjects.innerHTML += `          <div class="c-main__cardProject">
               <div class="c-main__preview">
-                <img src="${item.img}" alt="${item.altText}">
+                <img src="${item.img}" alt="">
               </div>
   
               <span class="c-main__category">${item.type}</span>
+
+              <div>${item.technologies.join('')}</div>
+
               <h3 class="c-main__titleProject">${item.title}</h3>
   
               <div class="c-main__links">
                 <a href="${item.linkSite}" target="_blank" aria-label="${item.arialLabelSite}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                
                 <a href="${item.linkGithub}" target="_blank" aria-label="${item.arialLabelGithub}"><i class="fa-solid fa-code"></i></a>
               </div>
             </div>
@@ -169,14 +164,18 @@ btnPessoal.addEventListener('click', () => {
   pessoalArr.forEach((item) => {
     listProjects.innerHTML += `          <div class="c-main__cardProject">
               <div class="c-main__preview">
-                <img src="${item.img}" alt="${item.altText}">
+                <img src="${item.img}" alt="">
               </div>
   
               <span class="c-main__category">${item.type}</span>
+
+              <div>${item.technologies.join('')}</div>
+
               <h3 class="c-main__titleProject">${item.title}</h3>
   
               <div class="c-main__links">
                 <a href="${item.linkSite}" target="_blank" aria-label="${item.arialLabelSite}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                
                 <a href="${item.linkGithub}" target="_blank" aria-label="${item.arialLabelGithub}"><i class="fa-solid fa-code"></i></a>
               </div>
             </div>
