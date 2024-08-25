@@ -82,6 +82,22 @@ const projects = [
     linkGithub: "https://github.com/LucasBarbosaDev1/gerador-de-relatorio-MAR",
     arialLabelSite: "link-do-site",
     arialLabelGithub: "link-do-repositório"
+  },
+  {
+    img: "src/assets/relatorio-mar/preview-pigHouse.webp",
+    altText: "preview-do-projeto",
+    type: "FREELANCE",
+    technologies: [
+      '<img width="30" height="30" src="https://img.icons8.com/color/60/html-5--v1.png" alt="html-5--v1"/>',
+      '<img width="30" height="30" src="https://img.icons8.com/color/60/css3.png" alt="css3"/>',
+      '<img width="30" height="30" src="https://img.icons8.com/color/60/sass.png" alt="sass"/>',
+      '<img width="30" height="30" src="https://img.icons8.com/color/60/typescript.png" alt="typescript"/>'
+    ],
+    title: "E-COMMERCE VIA WHATSAPP",
+    linkSite: "https://test-pighouse.netlify.app",
+    linkGithub: "https://github.com/LucasBarbosaDev1/pig-house",
+    arialLabelSite: "link-do-site",
+    arialLabelGithub: "link-do-repositório"
   }
 ];
 
