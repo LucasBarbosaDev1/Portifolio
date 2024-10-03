@@ -1,46 +1,29 @@
 // sessão nav ativa
-const nav = document.querySelector('.c-header__nav');
-const homeNav = document.querySelector('.homeNav');
-const techNav = document.querySelector('.techNav');
-const projectsNav = document.querySelector('.projectsNav');
+const cHeader = document.querySelector('#home');
+const cTech = document.querySelector('#tech');
+const cProjects = document.querySelector('#projects');
+const navHome = document.querySelector('.homeNav');
+const navTech = document.querySelector('.techNav');
+const navProjects = document.querySelector('.projectsNav');
 
-const header = document.querySelector('.c-header');
-const secTech = document.querySelector('.c-main__secTech');
-const main__projects = document.querySelector('.c-main__projects')
+window.addEventListener('scroll', ()=> {
+  const positionHome = cHeader.offsetHeight - 1;
+  const positionTech = positionHome + cTech.offsetHeight - 1;
 
-window.addEventListener('scroll', () => {
-  const navTop = nav.getBoundingClientRect().top;
+  if (window.scrollY <= positionHome) {
+    navHome.classList.add('active');
+    navTech.classList.remove('active');
+    
+  } else if (window.scrollY > positionHome && window.scrollY <= positionTech) {
+    navTech.classList.add('active');
+    navHome.classList.remove('active');
+    navProjects.classList.remove('active');
 
-  const headerTop = header.getBoundingClientRect().top;
-  const headerBottom = headerTop + header.offsetHeight;
-
-  const techTop = secTech.getBoundingClientRect().top;
-  const techBottom = techTop + secTech.offsetHeight;
-
-  const projectsTop = main__projects.getBoundingClientRect().top;
-  const projectsBottom = projectsTop + main__projects.offsetHeight;
-  const pageHeight = document.documentElement.scrollHeight;
-  const scrollTop = window.scrollY;
-
-  if (navTop >= headerTop && navTop < headerBottom) {
-    homeNav.classList.add('active');
-    techNav.classList.remove('active');
-    projectsNav.classList.remove('active');
-  };
-
-  if (navTop >= techTop && navTop < techBottom) {
-    homeNav.classList.remove('active');
-    techNav.classList.add('active');
-    projectsNav.classList.remove('active');
-  };
-
-  if (navTop >= projectsTop && navTop < projectsBottom || scrollTop + window.innerHeight >= pageHeight) {
-    homeNav.classList.remove('active');
-    techNav.classList.remove('active');
-    projectsNav.classList.add('active');
-  };
+  } else if (window.scrollY > positionTech) {
+    navProjects.classList.add('active');
+    navTech.classList.remove('active');
+  }
 });
-
 
 // efeito typing
 const myName = document.querySelector('.c-header__title--emphasis');
