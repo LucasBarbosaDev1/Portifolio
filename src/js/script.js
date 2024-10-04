@@ -48,136 +48,115 @@ setInterval(() => {
   };
 }, 3000)
 
-// projetos
-const projects = [
-  {
-    img: "src/assets/relatorio-mar/preview-mar.webp",
-    altText: "",
-    type: "FREELANCE",
-    technologies: [
-      '<img width="30" height="30" src="https://img.icons8.com/color/60/html-5--v1.png" alt="html-5--v1"/>',
-      '<img width="30" height="30" src="https://img.icons8.com/color/60/css3.png" alt="css3"/>',
-      '<img width="30" height="30" src="https://img.icons8.com/color/60/sass.png" alt="sass"/>',
-      '<img width="30" height="30" src="https://img.icons8.com/color/60/typescript.png" alt="typescript"/>'
-    ],
-    title: "GERADOR DE RELATÓRIO VIA WHATSAPP",
-    linkSite: "https://relatorio-mar-reciclagem.netlify.app/",
-    linkGithub: "https://github.com/LucasBarbosaDev1/gerador-de-relatorio-MAR",
-    arialLabelSite: "link-do-site",
-    arialLabelGithub: "link-do-repositório"
-  },
-  {
-    img: "src/assets/relatorio-mar/preview-pigHouse.webp",
-    altText: "preview-do-projeto",
-    type: "FREELANCE",
-    technologies: [
-      '<img width="30" height="30" src="https://img.icons8.com/color/60/html-5--v1.png" alt="html-5--v1"/>',
-      '<img width="30" height="30" src="https://img.icons8.com/color/60/css3.png" alt="css3"/>',
-      '<img width="30" height="30" src="https://img.icons8.com/color/60/sass.png" alt="sass"/>',
-      '<img width="30" height="30" src="https://img.icons8.com/color/60/typescript.png" alt="typescript"/>'
-    ],
-    title: "E-COMMERCE VIA WHATSAPP",
-    linkSite: "https://test-pighouse.netlify.app",
-    linkGithub: "https://github.com/LucasBarbosaDev1/pig-house",
-    arialLabelSite: "link-do-site",
-    arialLabelGithub: "link-do-repositório"
-  }
-];
-
 const listProjects = document.querySelector('.c-main__listProject');
 const btnAll = document.querySelector('#all');
 const btnFrelance = document.querySelector('#freelance');
 const btnPessoal = document.querySelector('#pessoal');
 
-btnAll.addEventListener('click', () => {
-  listProjects.innerHTML = "";
-  btnAll.classList.add('active');
-  btnFrelance.classList.remove('active');
-  btnPessoal.classList.remove('active');
+async function dataBase() {
+  const response = await fetch('src/dataBase/dataBase.json');
+  const data = await response.json();
+  const arrData = [...data];
 
-  projects.forEach((item) => {
-    listProjects.innerHTML += `          <div class="c-main__cardProject">
-              <div class="c-main__preview">
-                <img src="${item.img}" alt="">
-              </div>
-  
-              <span class="c-main__category">${item.type}</span>
+  return arrData;
+};
 
-              <div>${item.technologies.join('')}</div>
+dataBase()
+  .then(dados => {
+    btnAll.addEventListener('click', () => {
+    listProjects.innerHTML = "";
+    btnAll.classList.add('active');
+    btnFrelance.classList.remove('active');
+    btnPessoal.classList.remove('active');
 
-              <h3 class="c-main__titleProject">${item.title}</h3>
-  
-              <div class="c-main__links">
-                <a href="${item.linkSite}" target="_blank" aria-label="${item.arialLabelSite}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    dados.forEach((item) => {
+      listProjects.innerHTML += 
+        `<div class="c-main__cardProject">
+          <div class="c-main__preview">
+            <img src="${item.img}" alt="">
+          </div>
+
+          <span class="c-main__category">${item.type}</span>
+
+          <div>${item.technologies.join('')}</div>
+
+          <h3 class="c-main__titleProject">${item.title}</h3>
+
+            <div class="c-main__links">
+              <a href="${item.linkSite}" target="_blank" aria-label="${item.arialLabelSite}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 
-                <a href="${item.linkGithub}" target="_blank" aria-label="${item.arialLabelGithub}"><i class="fa-solid fa-code"></i></a>
-              </div>
+              <a href="${item.linkGithub}" target="_blank" aria-label="${item.arialLabelGithub}"><i class="fa-solid fa-code"></i></a>
             </div>
-  `;
-  });
-});
-btnAll.click();
+        </div>`;
+      });
+    });
 
-btnFrelance.addEventListener('click', () => {
-  listProjects.innerHTML = "";
-  btnFrelance.classList.add('active');
-  btnAll.classList.remove('active');
-  btnPessoal.classList.remove('active');
+    btnAll.click();
 
-  const freelancesArr = projects.filter((item) => {
-    return item.type === "FREELANCE";
-  });
+    btnFrelance.addEventListener('click', () => {
+    listProjects.innerHTML = "";
+    btnFrelance.classList.add('active');
+    btnAll.classList.remove('active');
+    btnPessoal.classList.remove('active');
 
-  freelancesArr.forEach((item) => {
-    listProjects.innerHTML += `          <div class="c-main__cardProject">
-              <div class="c-main__preview">
-                <img src="${item.img}" alt="">
-              </div>
-  
-              <span class="c-main__category">${item.type}</span>
+    const freelancesArr = dados.filter((item) => {
+      return item.type === "FREELANCE";
+    });
 
-              <div>${item.technologies.join('')}</div>
+    freelancesArr.forEach((item) => {
+      listProjects.innerHTML += 
+        `<div class="c-main__cardProject">
+          <div class="c-main__preview">
+            <img src="${item.img}" alt="">
+          </div>
 
-              <h3 class="c-main__titleProject">${item.title}</h3>
-  
-              <div class="c-main__links">
-                <a href="${item.linkSite}" target="_blank" aria-label="${item.arialLabelSite}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <span class="c-main__category">${item.type}</span>
+
+            <div>${item.technologies.join('')}</div>
+
+            <h3 class="c-main__titleProject">${item.title}</h3>
+
+            <div class="c-main__links">
+              <a href="${item.linkSite}" target="_blank" aria-label="${item.arialLabelSite}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 
-                <a href="${item.linkGithub}" target="_blank" aria-label="${item.arialLabelGithub}"><i class="fa-solid fa-code"></i></a>
-              </div>
+              <a href="${item.linkGithub}" target="_blank" aria-label="${item.arialLabelGithub}"><i class="fa-solid fa-code"></i></a>
             </div>
-  `;
-  });
-});
+        </div>`;
+      });
+    });
 
-btnPessoal.addEventListener('click', () => {
-  listProjects.innerHTML = "";
-  btnPessoal.classList.add('active');
-  btnAll.classList.remove('active');
-  btnFrelance.classList.remove('active');
+    btnPessoal.addEventListener('click', () => {
+      listProjects.innerHTML = "";
+      btnPessoal.classList.add('active');
+      btnAll.classList.remove('active');
+      btnFrelance.classList.remove('active');
 
-  const pessoalArr = projects.filter((item) => {
-    return item.type === "PESSOAL";
+      const pessoalArr = dados.filter((item) => {
+        return item.type === "PESSOAL";
+      });
+
+      pessoalArr.forEach((item) => {
+        listProjects.innerHTML += 
+          `<div class="c-main__cardProject">
+            <div class="c-main__preview">
+              <img src="${item.img}" alt="">
+            </div>
+
+            <span class="c-main__category">${item.type}</span>
+
+            <div>${item.technologies.join('')}</div>
+
+            <h3 class="c-main__titleProject">${item.title}</h3>
+
+            <div class="c-main__links">
+              <a href="${item.linkSite}" target="_blank" aria-label="${item.arialLabelSite}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  
+              <a href="${item.linkGithub}" target="_blank" aria-label="${item.arialLabelGithub}"><i class="fa-solid fa-code"></i></a>
+            </div>
+          </div>`;
+      });
+    });
   })
-
-  pessoalArr.forEach((item) => {
-    listProjects.innerHTML += `          <div class="c-main__cardProject">
-              <div class="c-main__preview">
-                <img src="${item.img}" alt="">
-              </div>
-  
-              <span class="c-main__category">${item.type}</span>
-
-              <div>${item.technologies.join('')}</div>
-
-              <h3 class="c-main__titleProject">${item.title}</h3>
-  
-              <div class="c-main__links">
-                <a href="${item.linkSite}" target="_blank" aria-label="${item.arialLabelSite}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                
-                <a href="${item.linkGithub}" target="_blank" aria-label="${item.arialLabelGithub}"><i class="fa-solid fa-code"></i></a>
-              </div>
-            </div>
-  `;
+  .catch(error => {
+    console.error(error);
   });
-});
