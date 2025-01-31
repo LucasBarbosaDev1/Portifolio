@@ -6,6 +6,7 @@ const navHome = document.querySelector('.homeNav');
 const navTech = document.querySelector('.techNav');
 const navProjects = document.querySelector('.projectsNav');
 
+// efeito active no nav
 window.addEventListener('scroll', ()=> {
   const positionHome = cHeader.offsetHeight - 1;
   const positionTech = positionHome + cTech.offsetHeight - 1;
@@ -53,6 +54,7 @@ const btnAll = document.querySelector('#all');
 const btnFrelance = document.querySelector('#freelance');
 const btnPessoal = document.querySelector('#pessoal');
 
+// requisicao ao banco de dados local
 async function dataBase() {
   const response = await fetch('src/dataBase/dataBase.json');
   const data = await response.json();
@@ -61,6 +63,30 @@ async function dataBase() {
   return arrData;
 };
 
+// funcao que monta os cards de projeto
+function cardProject(img, type, technologies, title, linkSite, arialLabelSite, linkGithub, arialLabelGithub) {
+  let html = `<div class="c-main__cardProject">
+      <div class="c-main__preview">
+        <img src="${img}" alt="">
+      </div>
+
+        <span class="c-main__category">${type}</span>
+
+        <div>${technologies.join('')}</div>
+
+        <h3 class="c-main__titleProject">${title}</h3>
+
+        <div class="c-main__links">
+          <a href="${linkSite}" target="_blank" aria-label="${arialLabelSite}"><i class="fa-regular fa-regular fa-eye"></i></a>
+            
+          <a href="${linkGithub}" target="_blank" aria-label="${arialLabelGithub}"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </div>`;
+
+  return html;
+};
+
+// faz a renderizacao dos cards de projeto
 dataBase()
   .then(dados => {
     btnAll.addEventListener('click', () => {
@@ -71,23 +97,8 @@ dataBase()
 
     dados.forEach((item) => {
       listProjects.innerHTML += 
-        `<div class="c-main__cardProject">
-          <div class="c-main__preview">
-            <img src="${item.img}" alt="">
-          </div>
+        cardProject(item.img, item.type, item.technologies, item.title, item.linkSite, item.arialLabelSite, item.linkGithub, item.arialLabelGithub)
 
-          <span class="c-main__category">${item.type}</span>
-
-          <div>${item.technologies.join('')}</div>
-
-          <h3 class="c-main__titleProject">${item.title}</h3>
-
-            <div class="c-main__links">
-              <a href="${item.linkSite}" target="_blank" aria-label="${item.arialLabelSite}"><i class="fa-regular fa-eye"></i></a>
-                
-              <a href="${item.linkGithub}" target="_blank" aria-label="${item.arialLabelGithub}"><i class="fa-brands fa-github"></i></a>
-            </div>
-        </div>`;
       });
     });
 
@@ -105,23 +116,8 @@ dataBase()
 
     freelancesArr.forEach((item) => {
       listProjects.innerHTML += 
-        `<div class="c-main__cardProject">
-          <div class="c-main__preview">
-            <img src="${item.img}" alt="">
-          </div>
+        cardProject(item.img, item.type, item.technologies, item.title, item.linkSite, item.arialLabelSite, item.linkGithub, item.arialLabelGithub)
 
-            <span class="c-main__category">${item.type}</span>
-
-            <div>${item.technologies.join('')}</div>
-
-            <h3 class="c-main__titleProject">${item.title}</h3>
-
-            <div class="c-main__links">
-              <a href="${item.linkSite}" target="_blank" aria-label="${item.arialLabelSite}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                
-              <a href="${item.linkGithub}" target="_blank" aria-label="${item.arialLabelGithub}"><i class="fa-solid fa-code"></i></a>
-            </div>
-        </div>`;
       });
     });
 
@@ -137,23 +133,8 @@ dataBase()
 
       pessoalArr.forEach((item) => {
         listProjects.innerHTML += 
-          `<div class="c-main__cardProject">
-            <div class="c-main__preview">
-              <img src="${item.img}" alt="">
-            </div>
+          cardProject(item.img, item.type, item.technologies, item.title, item.linkSite, item.arialLabelSite, item.linkGithub, item.arialLabelGithub)
 
-            <span class="c-main__category">${item.type}</span>
-
-            <div>${item.technologies.join('')}</div>
-
-            <h3 class="c-main__titleProject">${item.title}</h3>
-
-            <div class="c-main__links">
-              <a href="${item.linkSite}" target="_blank" aria-label="${item.arialLabelSite}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                  
-              <a href="${item.linkGithub}" target="_blank" aria-label="${item.arialLabelGithub}"><i class="fa-solid fa-code"></i></a>
-            </div>
-          </div>`;
       });
     });
   })
