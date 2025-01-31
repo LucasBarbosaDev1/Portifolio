@@ -83,9 +83,9 @@ dataBase()
           <h3 class="c-main__titleProject">${item.title}</h3>
 
             <div class="c-main__links">
-              <a href="${item.linkSite}" target="_blank" aria-label="${item.arialLabelSite}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a href="${item.linkSite}" target="_blank" aria-label="${item.arialLabelSite}"><i class="fa-regular fa-eye"></i></a>
                 
-              <a href="${item.linkGithub}" target="_blank" aria-label="${item.arialLabelGithub}"><i class="fa-solid fa-code"></i></a>
+              <a href="${item.linkGithub}" target="_blank" aria-label="${item.arialLabelGithub}"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>`;
       });

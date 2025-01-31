@@ -55,14 +55,13 @@ body, html{
 .c-header{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 100%;
   height: 100vh;
-  background-size: cover;
   background-position: center center;
   background: rgb(66,1,95);
   background: linear-gradient(180deg, rgba(66,1,95,1) 0%, rgba(7,7,24,1) 96%);
   background-color: black;
+  justify-content: center;
 
   .c-header__nav{
     position: fixed;
@@ -88,13 +87,12 @@ body, html{
 
   .c-header__div{
     color: #ffffff;
-    padding-left: .5rem;
+    padding: .5rem;
 
     .c-header__title{
       font-family: $ubuntu;
       font-weight: normal;
       font-size: 26px;
-      display: block;
 
       .c-header__title--emphasis{
         color: $secondary-color;
@@ -112,42 +110,41 @@ body, html{
       font-family: $roboto-lighter;
       font-size: 1rem;
       margin-top: 1rem;
-      max-width: 360px;
+      max-width: 400px;
     }
 
-  }
-
-  .c-header__buttons{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin-top: 1.5rem;
-    color: #ffffff;
-    gap: 1rem;
-    padding-left: .5rem;
-
-    .c-header__download{
+    .c-header__buttons{
       display: flex;
       align-items: center;
-      justify-content: center;
-      height: 40px;
-      width: 160px;
-      border: 2px solid $secondary-color;
-      background-color: transparent;
-      font-size: 1rem;
-      color: $secondary-color;
-      font-family: $roboto-normal;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    i{
-      color: $secondary-color;
-      font-size: 30px;
-      cursor: pointer;
+      width: 100%;
+      margin-top: 1.5rem;
+      color: #ffffff;
+      gap: 1rem;
+  
+      .c-header__download{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 160px;
+        border: 2px solid $secondary-color;
+        background-color: transparent;
+        font-size: 1rem;
+        color: $secondary-color;
+        font-family: $roboto-normal;
+        cursor: pointer;
+        text-decoration: none;
+      }
+  
+      i{
+        color: $secondary-color;
+        font-size: 30px;
+        cursor: pointer;
+      }
     }
   }
-}
+  }
+
 
 .c-main{
   width: 100%;
@@ -156,7 +153,7 @@ body, html{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 30px;
+  padding: 1rem;
 
   .c-main__secTech{
     display: flex;
@@ -170,9 +167,10 @@ body, html{
     }
 
     .c-main__cards{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
 
       .c-main__cardTech{
         width: 140px;
@@ -209,7 +207,6 @@ body, html{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
 
     .c-main__title{
       margin-top: 60px;
@@ -235,12 +232,19 @@ body, html{
     }
 
     .c-main__listProject{
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2.5rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
 
       .c-main__cardProject{
-        line-height: 1.5rem;
+        max-width: 340px;
+        height: 340px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        // line-height: 1.5rem;
 
         .c-main__preview{
           border: 2px solid $secondary-color;
@@ -269,7 +273,7 @@ body, html{
 
         .c-main__links{
           display: flex;
-          gap: 1.5rem;
+          gap: 1rem;
           margin-top: .7rem;
 
           a{
@@ -284,11 +288,10 @@ body, html{
 
 @media (min-width: 375px) {
   .c-header{
-    justify-content: center;
-    align-items: center;
+    align-items: start;
 
     .c-header__div{
-      width: 95%;
+      
       .c-header__title{
         font-size: 30px;
       }
@@ -296,17 +299,16 @@ body, html{
       .c-header__description{
         font-size: 1.2rem;
       }
+
     }
 
-    .c-header__buttons{
-      width: 95%;
-    }
 
   }
 }
 
 @media (min-width: 768px) {
   .c-header{
+    
     .c-header__nav{
       justify-content: end;
       gap: .5rem;
@@ -336,7 +338,8 @@ body, html{
     }
 
     .c-header__div{
-      width: 85%;
+      padding: 2rem;
+
       .c-header__title{
         font-size: 50px;
       }
@@ -346,92 +349,39 @@ body, html{
         max-width: 600px;
       }
 
-    }
-
-    .c-header__buttons{
-      width: 85%;
-      margin-top: 2.5rem;
-
-      .c-header__download{
-        width: 185px;
-        height: 50px;
-        font-size: 20px;
-        transition: .5s ease-in-out;
-
-        &:hover{
-          scale: 1.1;
-          color: #ffffff;
-          border-color: #ffffff;
+      .c-header__buttons{
+        margin-top: 2.5rem;
+  
+        .c-header__download{
+          width: 185px;
+          height: 50px;
+          font-size: 20px;
+          transition: .5s ease-in-out;
+  
+          &:hover{
+            scale: 1.1;
+            color: #ffffff;
+            border-color: #ffffff;
+          }
+  
         }
-
-      }
-
-      a i{
-        font-size: 40px;
-        transition: .5s ease-in-out;
-
-        &:hover{
-          scale: 1.4;
-          color: #ffffff;
+  
+        a i{
+          font-size: 40px;
+          transition: .5s ease-in-out;
+  
+          &:hover{
+            scale: 1.4;
+            color: #ffffff;
+          }
         }
       }
     }
+
   }
 
   .c-main{
-    .c-main__secTech{
-      .c-main__cards{
-        grid-template-areas: 
-          "item1 item2 item3 item4"
-          "item5 item6 item7 item8"
-          "item9 item9 item10 item10"
-        ;
-      }
-
-      .item1{
-        grid-area: item1;
-      }
-
-      .item2{
-        grid-area: item2;
-      }
-
-      .item3{
-        grid-area: item3;
-      }
-
-      .item4{
-        grid-area: item4;
-      }
-
-      .item5{
-        grid-area: item5;
-      }
-
-      .item6{
-        grid-area: item6;
-      }
-
-      .item7{
-        grid-area: item7;
-      }
-
-      .item8{
-        grid-area: item8;
-      }
-
-      .item9{
-        grid-area: item9;
-        justify-self: end;
-      }
-
-      .item10{
-        grid-area: item10;
-      }
-    }
-
     .c-main__projects{
-      padding: 0 4rem;
 
       .c-main__menu{
         input{
@@ -440,9 +390,9 @@ body, html{
       }
 
       .c-main__listProject{
-        grid-template-columns: 1fr 1fr;
 
         .c-main__cardProject{
+
           .c-main__links{
             a{
               transition: .5s ease-in-out;
@@ -462,7 +412,8 @@ body, html{
 @media (min-width: 1024px) {
   .c-header{
     .c-header__div{
-      width: 75%;
+      padding: 5rem;
+
       .c-header__title{
         font-size: 64px;
       }
@@ -472,9 +423,6 @@ body, html{
       }
     }
 
-    .c-header__buttons{
-      width: 75%;
-    }
   }
 
   .c-main{
@@ -484,11 +432,6 @@ body, html{
       }
 
       .c-main__cards{
-        grid-template-areas: 
-        "item1 item2 item3 item4 item5"
-        "item6 item7 item8 item9 item10"
-        ;
-        gap: 20px;
 
         .c-main__cardTech{
           width: 160px;
@@ -531,17 +474,6 @@ body, html{
         input{
           font-size: 1.1rem;
         }
-      }
-    }
-  }
-
-}
-
-@media (min-width: 1440px) {
-  .c-main{
-    .c-main__projects{
-      .c-main__listProject{
-        grid-template-columns: 1fr 1fr 1fr;
       }
     }
   }
