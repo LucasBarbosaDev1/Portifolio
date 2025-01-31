@@ -236,6 +236,9 @@ body, html {
   position: relative;
   padding: 0 5px 2px;
 }
+.c-main .c-main__projects .c-main__menu span:hover {
+  color: #CD97FF;
+}
 .c-main .c-main__projects .c-main__listProject {
   display: flex;
   flex-wrap: wrap;
@@ -278,6 +281,15 @@ body, html {
 .c-main .c-main__projects .c-main__listProject .c-main__cardProject .c-main__links a {
   color: #CD97FF;
   font-size: 1.5rem;
+}
+
+footer {
+  background-color: #1d002b;
+  width: 100%;
+  text-align: center;
+  font-family: "Roboto-Lighter", sans-serif;
+  color: #ffffff;
+  padding: 0.8rem 0;
 }
 
 @media (min-width: 375px) {

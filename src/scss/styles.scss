@@ -228,6 +228,10 @@ body, html{
         cursor: pointer;
         position: relative;
         padding: 0 5px 2px;
+
+        &:hover{
+          color: $secondary-color;
+        }
       }
     }
 
@@ -284,6 +288,15 @@ body, html{
       }
     }
   }
+}
+
+footer{
+  background-color: #1d002b;
+  width: 100%;
+  text-align: center;
+  font-family: $roboto-lighter;
+  color: #ffffff;
+  padding: .8rem 0;
 }
 
 @media (min-width: 375px) {
