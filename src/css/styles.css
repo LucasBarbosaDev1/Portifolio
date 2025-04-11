@@ -36,6 +36,7 @@ body, html {
 
 .active {
   color: #CD97FF !important;
+  font-weight: 600;
 }
 .active::after {
   content: " " !important;
@@ -252,6 +253,7 @@ body, html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 5px;
 }
 .c-main .c-main__projects .c-main__listProject .c-main__cardProject .c-main__preview {
   border: 2px solid #CD97FF;
@@ -272,6 +274,10 @@ body, html {
   font-family: "Roboto-Normal", sans-serif;
   font-weight: normal;
   font-size: 1rem;
+}
+.c-main .c-main__projects .c-main__listProject .c-main__cardProject .c-main__technologies {
+  display: flex;
+  gap: 10px;
 }
 .c-main .c-main__projects .c-main__listProject .c-main__cardProject .c-main__links {
   display: flex;
