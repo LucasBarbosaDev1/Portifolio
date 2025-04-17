@@ -71,7 +71,7 @@ function cardProject(img, alt, type, title, technologies, linkSite, linkGithub) 
       </div>
 
       <div class="c-main__links">
-        <a href="${linkSite}" target="_blank" aria-label="link-do-site"><i class="fa-regular fa-regular fa-eye"></i></a>
+        <a href="${linkSite}" target="_blank" aria-label="link-do-site"><i class="fa-solid fa-globe"></i></a>
           
         <a href="${linkGithub}" target="_blank" aria-label="link-do-repositório"><i class="fa-brands fa-github"></i></a>
       </div>
